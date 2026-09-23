@@ -1,185 +1,40 @@
-SWYNEX Exploratory Data Analysis
-
-Task 2 — Exploratory Data Analysis
-
-This project performs Exploratory Data Analysis (EDA) on a cleaned Online Retail dataset using Python, Pandas, NumPy, Matplotlib, and Seaborn.
-
-The analysis goes beyond basic statistics and explores revenue trends, customer behavior, product performance, geographic distribution, customer revenue concentration, RFM segmentation, and repeat-purchase behavior.
-
-Project Objectives
-
-Explore the cleaned retail dataset
-
-Identify revenue trends over time
-
-Analyze order timing by hour and day of week
-
-Compare revenue across countries
-
-Identify the most-sold products
-
-Analyze customer revenue concentration using the Pareto principle
-
-Build RFM (Recency, Frequency, Monetary) customer segments
-
-Analyze repeat-purchase behavior among the highest-spending customers
-
-Extract useful business insights from the data
-
-Technologies Used
-
-Python
-
-Pandas
-
-NumPy
-
-Matplotlib
-
-Seaborn
-
-Jupyter Notebook
-
-Project Structure
-
-SWYNEX-Exploratory-Data-Analysis/
-│
-├── EDA_clean.ipynb
-├── cleaned_online_retail_data_v1.csv
-└── README.md
-
-cleaned_online_retail_data_v1.csv is the cleaned dataset produced in Task 1 and is required to run the notebook.
-
-Analysis Sections
-
-1. Setup & Data Loading
-
-Loads the cleaned dataset and prepares the Python libraries used for analysis.
-
-2. Feature Engineering
-
-Creates analysis-ready features including:
-
-TotalSpend
-
-YearMonth
-
-Hour
-
-DayOfWeek
-
-3. Revenue Trends Over Time
-
-Calculates monthly revenue and visualizes changes over time.
-
-4. Order Timing Patterns
-
-Analyzes the number of unique orders by:
-
-Hour of day
-
-Day of week
-
-5. Geographic Revenue Breakdown
-
-Ranks countries according to total revenue and visualizes the top countries.
-
-6. Top Products
-
-Identifies the products with the highest total quantity sold.
-
-7. Customer Revenue Concentration
-
-Uses cumulative customer spending to investigate how revenue is distributed across customers.
-
-8. RFM Segmentation
-
-Calculates:
-
-Recency: days since the customer's last purchase
-
-Frequency: number of distinct orders
-
-Monetary: total amount spent
-
-9. RFM Scoring & Customer Segments
-
-Converts RFM values into 1–5 scores and assigns customers to segments such as:
-
-Champions
-
-Loyal Customers
-
-New Customers
-
-Promising
-
-At Risk
-
-Needs Attention
-
-Hibernating / Lost
-
-10. Repeat-Purchase Behavior
-
-Focuses on the highest-spending 20% of customers and measures purchase frequency and average time between purchases.
-
-Key Findings
-
-The notebook produced the following results from the analyzed dataset:
-
-Dataset size: 392,692 cleaned transaction records were analyzed, representing 4,338 customers.
-
-Revenue by month: November 2011 generated the highest monthly revenue at approximately £1.156M.
-
-Order timing: The highest number of unique orders occurred at 12:00, with 3,130 orders. By day of week, Thursday recorded the highest number with 4,032 orders.
-
-Geographic concentration: The United Kingdom generated approximately £7.285M in revenue, substantially more than the other countries in the dataset.
-
-Top-selling product: PAPER CRAFT , LITTLE BIRDIE recorded the highest total quantity sold, with 80,995 units.
-
-Customer revenue concentration: The top 20% of customers (868 customers) generated approximately 74.7% of total revenue.
-
-RFM segmentation: The Champions segment contained 1,121 customers and accounted for approximately 65.9% of total revenue.
-
-Repeat purchasing: Among the top 20% highest-spending customers, the median interval between purchases was approximately 33.8 days.
-
-Business Interpretation
-
-The analysis shows that revenue is highly concentrated among a relatively small group of customers, while customer behavior varies considerably across RFM segments.
-
-The analysis also identifies clear patterns in purchasing time, geography, products, and repeat-purchase behavior. These patterns can be used as a basis for further customer analysis and business decision-making.
-
-How to Run
-
-Clone the repository:
-
-git clone https://github.com/YOUR_USERNAME/SWYNEX-Exploratory-Data-Analysis.git
-
-Open the project:
-
-cd SWYNEX-Exploratory-Data-Analysis
-
-Make sure the following files are in the same folder:
-
-EDA_clean.ipynb
-cleaned_online_retail_data_v1.csv
-
-Launch Jupyter Notebook:
-
-jupyter notebook
-
-Open EDA_clean.ipynb and run the cells.
-
-Task Submission
-
-This repository was created as part of SWYNEX Technologies Internship — Task 2: Exploratory Data Analysis.
-
-
-
-
-Author
-
-Mohamed Ben Abbes
-
-Data Analysis / IT Background
+# E-Commerce EDA & Customer Segmentation (RFM)[cite: 1]
+
+This repository contains an exploratory data analysis (EDA) and RFM (Recency, Frequency, Monetary) customer segmentation based on online retail data. The notebook analyzes sales trends, geographic performance, and purchasing behaviors to generate actionable customer segments[cite: 1]. 
+
+## Dataset Information
+*   **File Used:** `cleaned_online_retail_data_v1.csv`[cite: 1]
+*   **Preparation:** The data utilized in this analysis is pre-cleaned. Missing `CustomerID` values were dropped, duplicates were checked, and negative/zero `Quantity` and `UnitPrice` records were removed in a separate preprocessing step (`cleaning.ipynb`)[cite: 1].
+
+## Project Outline
+The notebook covers the following analytical phases[cite: 1]:
+1.  **Data loading & feature engineering:** Extracting `TotalSpend`, `YearMonth`, `Hour`, and `DayOfWeek`[cite: 1].
+2.  **Revenue trends over time:** Identifying monthly seasonality[cite: 1].
+3.  **Order timing patterns:** Analyzing order volume by hour of day and day of week[cite: 1].
+4.  **Geographic revenue breakdown:** Segmenting sales by country[cite: 1].
+5.  **Top products:** Identifying best-sellers by quantity sold[cite: 1].
+6.  **Customer revenue concentration:** Testing the Pareto (80/20) rule[cite: 1].
+7.  **RFM segmentation:** Calculating Recency, Frequency, and Monetary metrics[cite: 1].
+8.  **RFM scoring & customer segments:** Assigning scores to group customers[cite: 1].
+9.  **Repeat-purchase behavior:** Tracking top customers over time[cite: 1].
+10. **Key takeaways:** Final business recommendations[cite: 1].
+
+## Key Business Insights
+The exploratory data analysis reveals several critical operational and marketing patterns:
+
+| Focus Area | Key Finding | Actionable Takeaway |
+| :--- | :--- | :--- |
+| **Seasonality** | November 2011 was the peak month, generating £1.16M in revenue (69% above the monthly average). September and October also showed strong build-up[cite: 1]. | Inventory and marketing budgets should be heavily weighted toward the Sep–Nov holiday ramp-up[cite: 1]. |
+| **Order Timing** | Order volume peaks strictly between 10 AM and 3 PM, hitting its maximum at 12:00 PM (noon) with 3,130 orders. Thursdays are the busiest day, while there is zero order data for Saturdays[cite: 1]. | Target time-sensitive marketing promotions and schedule peak customer support staffing for weekday late-mornings[cite: 1]. |
+| **Geography** | The UK dominates sales, generating ~82% (£7.29M) of total revenue. The Netherlands (£285k) and EIRE (£265k) follow distantly[cite: 1]. | The business is highly reliant on the UK market; geographic diversification requires building from a very small base[cite: 1]. |
+| **Revenue Concentration** | The top 20% of customers (868 out of 4,338) are responsible for 74.7% (£6.63M) of total revenue, closely mirroring the Pareto principle[cite: 1]. | Retention efforts and VIP loyalty programs must be laser-focused on this top quintile to protect the core revenue stream[cite: 1]. |
+
+## Technologies Used
+*   **Python 3**
+*   **Pandas & NumPy:** Data manipulation and feature extraction[cite: 1].
+*   **Matplotlib & Seaborn:** Data visualization and trend charting[cite: 1].
+
+## How to Run
+1. Clone this repository to your local machine.
+2. Ensure you have the `cleaned_online_retail_data_v1.csv` dataset in the same directory as the notebook[cite: 1]. *(Note: If you only have the raw data, run `cleaning.ipynb` first).*
+3. Launch Jupyter Notebook and open the `.ipynb` file to run the cells sequentially.
